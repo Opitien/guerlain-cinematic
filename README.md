@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏛️ L'Art & La Matière | GUERLAIN Cinematic Experience
 
-## Getting Started
+A premium, design-forward digital flagship showcase built to capture the timeless sophistication of **Maison Guerlain's Haute Parfumerie** collection. 
 
-First, run the development server:
+This project redefines modern brand storytelling by merging high-end editorial typography with a hardware-accelerated, responsive cinematic introduction and immersive audio controls.
 
+---
+
+## ✨ Features
+
+* **🎥 Contrast-Optimized Cinematic Intro**: Full-screen black-and-white intro video (`intro.mp4`) that uses GPU acceleration (`translate3d`) and WebKit contrast-preservation (`image-rendering`) to guarantee ultra-sharp rendering on all modern screens.
+* **🔊 Smart Audio Entry Overlay**: A sleek, elegant, full-screen **Guerlain Brand Overlay** that gracefully solves modern browser autoplay blocks. If unmuted audio is blocked initially, the overlay prompts the user with a single click, instantly activating the full high-fidelity sound.
+* **🖤 Premium Editorial Design**: Sleek glassmorphism headers, micro-animating visualizer columns, and beautifully structured product grids displaying iconic fragrances.
+* **🧪 Olfactory Note Selector**: An interactive and immersive raw material presentation detailing ingredients (Rose Damascena, Tonka, Vanilla, Néroli) with smooth, state-driven animations.
+* **📱 Desktop & Mobile Responsive**: Tailored from the ground up to render exquisitely across all modern screen sizes and high-DPI displays.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Core**: Next.js 15 (App Router), React 19
+* **Styling**: Tailwind CSS (v4) & Custom Vanilla CSS Tokens
+* **Typography**: Luxury Google Fonts Integration (Playfair Display & Inter)
+* **Assets**: High-fidelity B&W Cinematic video and custom product photography mockups
+
+---
+
+## 🚀 Getting Started
+
+To run this premium cinematic experience locally, follow these simple steps:
+
+### 1. Install Dependencies
+```bash
+npm install
+```
+
+### 2. Run the Development Server
 ```bash
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to experience the flagship site live.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 💎 Advanced Technical Implementations
 
-## Learn More
+> [!NOTE]
+> **Audio Playback Flow**: Browsers block unmuted autoplay on initial load. We implemented an automatic unmuted autoplay query. If blocked, the application displays a stunning, semi-transparent **Guerlain Monogram Overlay** asking you to `Enter the Experience`. Clicking this captures user activation and starts unmuted playback instantly. On subsequent loads within the active session, the site autoplays unmuted directly!
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> [!TIP]
+> **Video Sharpness Resolution**: Standard browsers scale large video elements using default bilinear interpolation, which causes blurring on high-density screens. We bypassed this by applying custom CSS image contrast overrides (`-webkit-optimize-contrast` / `crisp-edges`) and hardware-accelerating the video layer (`transform: translate3d(0, 0, 0)`), yielding razor-sharp, crisp display quality identical to the source.
